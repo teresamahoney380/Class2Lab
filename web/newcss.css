@@ -7,6 +7,6 @@ and open the template in the editor.
     Created on : Jan 23, 2014, 1:22:17 PM
     Author     : tmahoney1
 */
-h1{
-    color: #0000cc;
+h1,h3{
+    color: blue;
 }
