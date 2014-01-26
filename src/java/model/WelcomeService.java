@@ -12,18 +12,23 @@ import java.util.GregorianCalendar;
 public class WelcomeService {
 
     String greeting;
+    String message;
     private Calendar cal = Calendar.getInstance();
     private Calendar morning = Calendar.getInstance();
     private Calendar afternoon = Calendar.getInstance();
     private Calendar evening = Calendar.getInstance();
 
     public WelcomeService() {
+        //cal.set(Calendar.HOUR_OF_DAY, 14);
         setGreeting(cal);
         System.out.println(greeting);
+        composeGreetingMessage("Terry");
+        System.out.println(message);
                 
     }
 
     public String setGreeting(Calendar cd) {
+        
         morning.set(Calendar.HOUR_OF_DAY, 0);
         morning.set(Calendar.MINUTE, 0);
         morning.set(Calendar.SECOND, 0);
@@ -45,6 +50,10 @@ public class WelcomeService {
             greeting = "Evening";
         }
         return greeting ;
+    }
+    public String composeGreetingMessage(String name){
+        message = "Good "+greeting+ ", "+name+". Welcome!";
+       return message; 
     }
 
     public static void main(String[] args) {
