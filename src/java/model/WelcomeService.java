@@ -13,17 +13,19 @@ public class WelcomeService {
 
     String greeting;
     String message;
+    String greetingName;
     private Calendar cal = Calendar.getInstance();
     private Calendar morning = Calendar.getInstance();
     private Calendar afternoon = Calendar.getInstance();
     private Calendar evening = Calendar.getInstance();
 
-    public WelcomeService() {
+    public WelcomeService(String gn) {
         //cal.set(Calendar.HOUR_OF_DAY, 14);
+        greetingName=gn;
         setGreeting(cal);
-        System.out.println(greeting);
-        composeGreetingMessage("Terry");
-        System.out.println(message);
+        //System.out.println(greeting);
+        composeGreetingMessage(greetingName);
+        //System.out.println(message);
                 
     }
 
@@ -53,12 +55,22 @@ public class WelcomeService {
     }
     public String composeGreetingMessage(String name){
         message = "Good "+greeting+ ", "+name+". Welcome!";
+        System.out.println(message);
        return message; 
     }
+    
 
-    public static void main(String[] args) {
-        WelcomeService ws=new WelcomeService();
-        
+//    public static void main(String[] args) {
+//        WelcomeService ws=new WelcomeService("Teresa");
+//        
+//    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
     
 }
